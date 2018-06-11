@@ -44,7 +44,7 @@ public class TextRestController {
         this.creator = creator;
     }
 
-    @GetMapping(value = "/{id}/file", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @GetMapping(value = "/{id}/text", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity<?> getText(@PathVariable("id") int id){
         return ResponseEntity.ok(fileService.getById(id));
     }
