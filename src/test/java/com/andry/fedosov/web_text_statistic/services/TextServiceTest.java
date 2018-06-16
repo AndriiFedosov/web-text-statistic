@@ -48,26 +48,26 @@ public class TextServiceTest extends TestResourcesServices {
 
     @Test
     public void getFilesWitLimitAndOffset(){
-        service.getTexts(limit,offset);
+        service.getTexts();
 
         verify(repository,times(1))
-                .findAllWithLimitAndOffset(limit,offset);
+                .findAll();
     }
 
     @Test
     public void getTextWithFilteredLinesTest(){
 
-        service.getTextWithFilter(minimumLines,limit,offset);
+        service.getTextWithFilter(minimumLines);
 
         verify(repository,times(1))
-                .textHaveMoreLinesWithLimitAndOffset(minimumLines,limit,offset);
+                .textHaveMoreLines(minimumLines);
     }
 
     @Test
     public void getFilteredTextsOnPage(){
-        service.getTextsFilterOnPage(minimumLines,limit,offset);
+        service.getTextsFilterOnPage(minimumLines);
 
         verify(repository,times(1))
-                .textHaveMoreLinesWithLimitAndOffset(minimumLines,limit,offset);
+                .textHaveMoreLines(minimumLines);
     }
 }

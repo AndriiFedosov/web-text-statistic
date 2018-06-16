@@ -23,10 +23,8 @@ public interface TextLineEntityRepository extends CrudRepository<Line,Integer> {
 
     Line getByNumberLineAndFileId(int numberLine, int file_id);
 
-    @Query(value = "select * from line where file_id = :id limit :limits offset :offsets",nativeQuery = true)
-    List<Line> getAllByLimitAndOffset(@Param("id") int id,
-                                      @Param("limits") int limits,
-                                      @Param("offsets") int offsets);
+    @Query(value = "select * from line where file_id = :id ",nativeQuery = true)
+    List<Line> getAllLines(@Param("id") int id);
 
     @Query(value = "select count(line_number) FROM line where file_id =:id",nativeQuery = true)
     long countByFileId(@Param("id") int id);

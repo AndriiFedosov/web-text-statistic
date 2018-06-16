@@ -33,17 +33,11 @@ public class TextLineService  {
         return repository.getLastId();
     }
 
-    public Pageable<? extends Line> getLinesOnPage(int id,int limit,int pages){
-        int offset = 0;
-        if (pages > 1) {
-            offset = (pages - 1) * limit;
-        }
-        return getLines(id,limit,offset);
-    }
-
-    public Pageable<? extends Line> getLines(int id, int limit,int offset){
-        List<Line> entities = repository.getAllByLimitAndOffset(id,limit,offset);
+    public Pageable<? extends Line> getLinesOnPage(int id){
+        List<Line> entities = repository.getAllLines(id);
         long count = repository.countByFileId(id);
         return new Pageable<>(entities,count);
     }
+
+
 }

@@ -22,14 +22,11 @@ import java.io.IOException;
 import java.net.URI;
 
 @RestController
-//@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping(value = "/v1/statistics")
-@EnableConfigurationProperties
-@ConfigurationProperties(prefix = "pages")
+
 public class TextRestController {
 
-    @Value("${pages.all}")
-    private int pages;
     @Resource(name = "textFileService")
     private TextFileService fileService;
     @Resource(name = "textLineService")
@@ -52,20 +49,18 @@ public class TextRestController {
 
 
     @GetMapping(value = "/{id}/lines", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public ResponseEntity<?> getAllLinesInFile(@PathVariable("id") int id,
-                                               @RequestParam(value = "limit", required = false,defaultValue = "1") int limit){
-        return ResponseEntity.ok(lineService.getLinesOnPage(id,limit, pages));
+    public ResponseEntity<?> getAllLinesInFile(@PathVariable("id") int id){
+        return ResponseEntity.ok(lineService.getLinesOnPage(id));
     }
 
 
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public ResponseEntity<?> getAllTexts(@RequestParam(value = "limit", required = false,defaultValue = "1") int limit,
-                                         @RequestParam(value = "min", required = false, defaultValue = "1") int min){
+    public ResponseEntity<?> getAllTexts(@RequestParam(value = "min", required = false, defaultValue = "1") int min){
         if(min < 1){
             return new ResponseEntity(HttpStatus.BAD_REQUEST);
         }
-        Pageable<? extends Text> texts = fileService.getTextsFilterOnPage(min,limit, pages);
+        Pageable<? extends Text> texts = fileService.getTextsFilterOnPage(min);
         if (texts.getComponents().isEmpty()){
             return new ResponseEntity(HttpStatus.NOT_FOUND);
         }

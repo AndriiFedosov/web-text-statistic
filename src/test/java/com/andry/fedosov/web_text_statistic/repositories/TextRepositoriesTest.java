@@ -39,7 +39,7 @@ public class TextRepositoriesTest extends TestResourcesRepositories {
         }
         textSaver();
 
-        List<Text> textsDB = textRepository.findAllWithLimitAndOffset(5,0);
+        List<Text> textsDB = textRepository.findAll();
 
         Assert.assertEquals(textsLocal,textsDB);
     }
@@ -73,7 +73,7 @@ public class TextRepositoriesTest extends TestResourcesRepositories {
         lineSaverWithTextEntity(text2, linesLocal);
 
 
-        List<? extends Text> texts = textRepository.textHaveMoreLinesWithLimitAndOffset(2,5,0);
+        List<? extends Text> texts = textRepository.textHaveMoreLines(2);
 
         Assert.assertEquals(2,texts.size());
     }

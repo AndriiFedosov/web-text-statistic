@@ -71,7 +71,7 @@ public class LineRepositoryTest extends TestResourcesRepositories {
 
         lineSaverWithTextEntity(text, linesLocal);
 
-        List<Line> linesDb = lineRepository.getAllByLimitAndOffset(1,5,0);
+        List<Line> linesDb = lineRepository.getAllLines(1);
 
         Assert.assertEquals(linesLocal,linesDb);
     }

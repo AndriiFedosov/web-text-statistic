@@ -31,7 +31,7 @@ public class TextRestControllerTest extends TextRestControllerResources {
 
         textService.save(textEntity);
 
-        mockMvc.perform(get("/v1/statistics/"+textEntity.getId()+"/file"))
+        mockMvc.perform(get("/v1/statistics/"+textEntity.getId()+"/text"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(mediaType))
                 .andExpect(jsonPath("$.id",is(textEntity.getId())))
@@ -46,8 +46,6 @@ public class TextRestControllerTest extends TextRestControllerResources {
 
         textService.save(textEntity);
         lineService.save(lineEntity);
-        lineService.save(lineEntity);
-        lineService.save(lineEntity);
 
         mockMvc.perform(get("/v1/statistics/" + textEntity.getId() + "/lines"))
                 .andExpect(status().isOk())
@@ -58,7 +56,7 @@ public class TextRestControllerTest extends TextRestControllerResources {
                 .andExpect(jsonPath("$.components[0].longestWord",is(lineEntity.getLongestWord())))
                 .andExpect(jsonPath("$.components[0].shortestWord",is(lineEntity.getShortestWord())))
                 .andExpect(jsonPath("$.components[0].averageWordLength",is(lineEntity.getAverageWordLength())))
-                .andExpect(jsonPath("$.elementsCount",is(3)));
+                .andExpect(jsonPath("$.elementsCount",is(1)));
     }
 
     @Test

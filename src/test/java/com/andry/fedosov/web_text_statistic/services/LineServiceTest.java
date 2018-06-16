@@ -43,19 +43,13 @@ public class LineServiceTest extends TestResourcesServices {
         verify(repository,times(1))
                 .getLastId();
     }
-    @Test
-    public void getLinesTest(){
-        service.getLines(id,limit,offset);
 
-        verify(repository,times(1))
-                .getAllByLimitAndOffset(id,limit,offset);
-    }
     @Test
     public void getLinesOnPageTest(){
-        service.getLinesOnPage(id,limit,offset);
+        service.getLinesOnPage(id);
 
         verify(repository,times(1))
-                .getAllByLimitAndOffset(id,limit,offset);
+                .getAllLines(id);
     }
 
 }

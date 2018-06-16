@@ -38,17 +38,14 @@ public interface TextFileEntityRepository extends CrudRepository<Text, Integer> 
             nativeQuery = true)
     void updateTextStatisticFromLines(@Param("id") int id);
 
-    @Query(value ="select * from text_stat limit :limits offset :offsets" ,nativeQuery = true)
-    List<Text> findAllWithLimitAndOffset(@Param("limits") int limit ,
-                                         @Param("offsets") int offset);
+
+    List<Text> findAll();
 
     long count();
 
 
-    @Query(value = "select * from line inner join text_stat group by id having count(file_id) >=:minimumLines limit :limits offset :offsets ",nativeQuery = true)
-    List<Text> textHaveMoreLinesWithLimitAndOffset(@Param("minimumLines") int minimumLines,
-                                                   @Param("limits") int limit ,
-                                                   @Param("offsets") int offset);
+    @Query(value = "select * from line inner join text_stat group by id having count(file_id) >=:minimumLines ",nativeQuery = true)
+    List<Text> textHaveMoreLines(@Param("minimumLines") int minimumLines);
 
     @Query(value ="select count(t.id) from (select t.id as id from line l inner join text_stat t on l.file_id = t.id group by (t.id) having count(l.file_id) >=?1) t",nativeQuery = true)
     long countOfFilteredTexts(int lines);

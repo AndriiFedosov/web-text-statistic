@@ -33,25 +33,21 @@ public class TextFileService  {
         return repository.getById(textFile.getId());
     }
 
-    public Pageable<? extends Text> getTextsFilterOnPage(int lines, int limit , int pages){
-        int offset = 0;
-        if (pages > 1) {
-            offset = (pages - 1) * limit;
-        }
+    public Pageable<? extends Text> getTextsFilterOnPage(int lines){
         if (lines == 1){
-            return getTexts(limit,offset);
+            return getTexts();
         }
-        return getTextWithFilter(lines,limit,offset);
+        return getTextWithFilter(lines);
     }
 
-    public Pageable<? extends Text> getTexts(int limit , int offset){
-        List<Text> entities = repository.findAllWithLimitAndOffset(limit,offset);
+    public Pageable<? extends Text> getTexts(){
+        List<Text> entities = repository.findAll();
         long count = repository.count();
         return  new Pageable<>(entities,count);
     }
 
-    public Pageable<? extends Text> getTextWithFilter(int lines, int limit, int offset){
-        List<Text> entities = repository.textHaveMoreLinesWithLimitAndOffset(lines,limit,offset);
+    public Pageable<? extends Text> getTextWithFilter(int lines){
+        List<Text> entities = repository.textHaveMoreLines(lines);
         long count = repository.countOfFilteredTexts(lines);
         return new Pageable<>(entities,count);
     }
