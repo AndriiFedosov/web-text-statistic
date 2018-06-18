@@ -43,6 +43,9 @@ public class TextRestController {
 
     @GetMapping(value = "/{id}/text", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity<?> getText(@PathVariable("id") int id){
+        if(id > fileService.getLastId()){
+            return new ResponseEntity(HttpStatus.NOT_FOUND);
+        }
         return ResponseEntity.ok(fileService.getById(id));
     }
 
@@ -50,6 +53,9 @@ public class TextRestController {
 
     @GetMapping(value = "/{id}/lines", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity<?> getAllLinesInFile(@PathVariable("id") int id){
+        if(id > lineService.getLastFileId()){
+            return new ResponseEntity(HttpStatus.NOT_FOUND);
+        }
         return ResponseEntity.ok(lineService.getLinesOnPage(id));
     }
 

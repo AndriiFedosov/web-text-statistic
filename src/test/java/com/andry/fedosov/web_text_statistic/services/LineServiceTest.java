@@ -51,5 +51,11 @@ public class LineServiceTest extends TestResourcesServices {
         verify(repository,times(1))
                 .getAllLines(id);
     }
+    @Test
+    public void getLastFileIdTest(){
+        service.getLastFileId();
+        verify(repository,times(1))
+                .getLastFileId();
+    }
 
 }

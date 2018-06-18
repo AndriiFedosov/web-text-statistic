@@ -29,4 +29,7 @@ public interface TextLineEntityRepository extends CrudRepository<Line,Integer> {
     @Query(value = "select count(line_number) FROM line where file_id =:id",nativeQuery = true)
     long countByFileId(@Param("id") int id);
 
+    @Query(value = "SELECT MAX(file_id) FROM line",nativeQuery = true)
+    int getLastFileId();
+
 }

@@ -90,5 +90,17 @@ public class LineRepositoryTest extends TestResourcesRepositories {
 
         Assert.assertEquals(linesLocal.size(),countFilesByIdInDB);
     }
+    @Test
+    @Transactional
+    public void getLastFileId(){
+        Text text = new Text(1);
+        textRepository.save(text);
+
+        List<Line> linesLocal = new ArrayList<>(5);
+
+        lineSaverWithTextEntity(text, linesLocal);
+        int lastIdInDb = lineRepository.getLastFileId();
+        Assert.assertEquals(lastIdInDb,1 );
+    }
 
 }

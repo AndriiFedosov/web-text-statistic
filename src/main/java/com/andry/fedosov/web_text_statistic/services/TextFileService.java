@@ -7,8 +7,6 @@ import entity.TextFile;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import java.util.List;
 
 @Service
@@ -22,6 +20,9 @@ public class TextFileService  {
             entity.setId(repository.getLastId()+1);
         }else entity.setId(1);
         return repository.save(entity);
+    }
+    public Integer getLastId(){
+        return repository.getLastId();
     }
 
     public Text getById(int id){

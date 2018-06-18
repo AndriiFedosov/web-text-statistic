@@ -40,4 +40,7 @@ public class TextLineService  {
     }
 
 
+    public int getLastFileId() {
+        return repository.getLastFileId();
+    }
 }

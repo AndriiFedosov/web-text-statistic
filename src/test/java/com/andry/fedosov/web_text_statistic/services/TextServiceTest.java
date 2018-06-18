@@ -70,4 +70,11 @@ public class TextServiceTest extends TestResourcesServices {
         verify(repository,times(1))
                 .textHaveMoreLines(minimumLines);
     }
+
+    @Test
+    public void getLastId(){
+        service.getLastId();
+        verify(repository,times(1))
+                .getLastId();
+    }
 }
