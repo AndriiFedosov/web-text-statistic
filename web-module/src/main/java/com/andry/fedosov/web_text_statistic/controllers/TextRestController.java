@@ -23,7 +23,7 @@ import java.net.URI;
 
 @RestController
 @CrossOrigin(origins = "https://text-statistic-ui.herokuapp.com")
-@RequestMapping(value = "/v1/statistics")
+@RequestMapping(value = "/")
 
 public class TextRestController {
 
