@@ -14,7 +14,7 @@ spring:
     password: 	 ${JDBC_DATABASE_PASSWORD}
   jpa:
     hibernate.ddl-auto: create
-    database: mysql
+    database: postgresql
     show-sql: false
   data:
     jpa:
