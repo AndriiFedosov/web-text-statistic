@@ -1,8 +1,9 @@
 package com.andry.fedosov.web_text_statistic.entity;
 
+
+
 import entity.TextFile;
 import entity.TextLine;
-
 
 import javax.persistence.*;
 

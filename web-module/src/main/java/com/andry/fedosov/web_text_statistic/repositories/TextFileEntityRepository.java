@@ -23,7 +23,7 @@ public interface TextFileEntityRepository extends CrudRepository<Text, Integer> 
     @Override
     Text save(Text entity);
 
-    Text getById (int id);
+    Text getById(int id);
 
     @Query(value = "SELECT MAX(id) FROM text_stat",nativeQuery = true)
     Integer getLastId();
