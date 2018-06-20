@@ -1,17 +1,17 @@
 spring:
   datasource:
-#    url: postgres://iwjzczhqmbgmyk:a5d02978b163512408289ebcb48f8c2cdd639791b41d33de5cc3bdac552ea04c@ec2-54-247-117-145.eu-west-1.compute.amazonaws.com:5432/d5fc8v9ppmuec0
-    url: jdbc:mysql://localhost:3306/statistics?allowPublicKeyRetrieval=true&
-                                                useUnicode=true&
-                                                useJDBCCompliantTimezoneShift=true&
-                                                useLegacyDatetimeCode=false&
-                                                serverTimezone=UTC&
-                                                characterEncoding=UTF-8&
-                                                useSSL=false
+#    url: jdbc:mysql://localhost:3306/statistics?allowPublicKeyRetrieval=true&
+#                                                useUnicode=true&
+#                                                useJDBCCompliantTimezoneShift=true&
+#                                                useLegacyDatetimeCode=false&
+#                                                serverTimezone=UTC&
+#                                                characterEncoding=UTF-8&
+#                                                useSSL=false
+    url: ${JDBC_DATABASE_URL}
 #    username: root
-#    username: iwjzczhqmbgmyk
-    password: root
-#    password: a5d02978b163512408289ebcb48f8c2cdd639791b41d33de5cc3bdac552ea04c
+    username: ${JDBC_DATABASE_USERNAME}
+#    password: root
+    password: 	 ${JDBC_DATABASE_PASSWORD}
   jpa:
     hibernate.ddl-auto: create
     database: mysql
