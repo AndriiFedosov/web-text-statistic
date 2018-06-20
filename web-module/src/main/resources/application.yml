@@ -13,8 +13,8 @@ spring:
     password: root
     password: ${JDBC_DATABASE_PASSWORD}
   jpa:
-    hibernate.ddl-auto: update
-    database: mysql
+    hibernate.ddl-auto: create
+    database: postgresql
     show-sql: true
   data:
     jpa:
