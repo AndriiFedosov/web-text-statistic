@@ -3,7 +3,6 @@ package utils;
 import entity.TextFile;
 import entity.TextLine;
 import org.apache.commons.io.FileUtils;
-import org.springframework.stereotype.Component;
 import service.LineStatisticService;
 import service.impl.LineStatisticServiceImpl;
 import service.impl.TextStatisticServiceImpl;

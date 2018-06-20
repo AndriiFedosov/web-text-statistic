@@ -1,17 +1,17 @@
 spring:
   datasource:
-#    url: jdbc:mysql://localhost:3306/statistics?allowPublicKeyRetrieval=true&
-#                                                useUnicode=true&
-#                                                useJDBCCompliantTimezoneShift=true&
-#                                                useLegacyDatetimeCode=false&
-#                                                serverTimezone=UTC&
-#                                                characterEncoding=UTF-8&
-#                                                useSSL=false
-    url: ${CLEARDB_DATABASE_URL}
-#    username: root
-    username: ${CLEARDB_USERNAME}
-#    password: root
-    password: ${CLEARDB_PASSWORD}
+    url: jdbc:mysql://localhost:3306/statistics?allowPublicKeyRetrieval=true&
+                                                useUnicode=true&
+                                                useJDBCCompliantTimezoneShift=true&
+                                                useLegacyDatetimeCode=false&
+                                                serverTimezone=UTC&
+                                                characterEncoding=UTF-8&
+                                                useSSL=false
+#    url: ${CLEARDB_DATABASE_URL}
+    username: root
+#    username: ${CLEARDB_USERNAME}
+    password: root
+#    password: ${CLEARDB_PASSWORD}
   jpa:
     hibernate.ddl-auto: create
     database: mysql
