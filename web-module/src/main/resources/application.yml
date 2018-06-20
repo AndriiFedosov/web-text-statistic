@@ -7,11 +7,11 @@ spring:
 #                                                serverTimezone=UTC&
 #                                                characterEncoding=UTF-8&
 #                                                useSSL=false
-    url: ${JDBC_DATABASE_URL}
+    url: ${CLEARDB_DATABASE_URL}
 #    username: root
-    username: ${JDBC_DATABASE_USERNAME}
+    username: ${CLEARDB_USERNAME}
 #    password: root
-    password: 	 ${JDBC_DATABASE_PASSWORD}
+    password: 	 ${CLEARDB_PASSWORD}
   jpa:
     hibernate.ddl-auto: create
     database: mysql
