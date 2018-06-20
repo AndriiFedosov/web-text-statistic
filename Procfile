@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -cp target/classes/com/andry/fedosov/web_text_statistic/WebTextStatisticApplication
+web: java -Dserver.port=$PORT $JAVA_OPTS -cp target/classes/com/andry/fedosov/web_text_statistic/WebTextStatisticApplication
