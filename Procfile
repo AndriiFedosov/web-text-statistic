@@ -1,0 +1,1 @@
+web:java $JAVA_OPTS -cp target/classes:target/dependency/* com.andry.fedosov.web_text_statistic.WebTextStatisticApplication
