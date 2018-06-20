@@ -5,7 +5,7 @@
     <parent>
         <artifactId>web-text-statistic</artifactId>
         <groupId>com.andry.fedosov</groupId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>1.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -52,11 +52,6 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-test</artifactId>
                 <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.postgresql</groupId>
-                <artifactId>postgresql</artifactId>
-                <version>9.4-1201-jdbc4</version>
             </dependency>
         </dependencies>
 

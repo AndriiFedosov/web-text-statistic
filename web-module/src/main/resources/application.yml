@@ -11,7 +11,7 @@ spring:
 #    username: root
     username: ${CLEARDB_USERNAME}
 #    password: root
-    password: 	 ${CLEARDB_PASSWORD}
+    password: ${CLEARDB_PASSWORD}
   jpa:
     hibernate.ddl-auto: create
     database: mysql
