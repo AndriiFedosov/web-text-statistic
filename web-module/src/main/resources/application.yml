@@ -8,14 +8,14 @@ spring:
 #                                                serverTimezone=UTC&
 #                                                characterEncoding=UTF-8&
 #                                                useSSL=false
-    username: root
+#    username: root
     username: ${JDBC_DATABASE_USERNAME}
-    password: root
+#    password: root
     password: ${JDBC_DATABASE_PASSWORD}
   jpa:
     hibernate.ddl-auto: create
     database: postgresql
-    show-sql: true
+    show-sql: false
   data:
     jpa:
       repositories:
