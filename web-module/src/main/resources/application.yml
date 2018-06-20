@@ -9,9 +9,11 @@ spring:
 #                                                characterEncoding=UTF-8&
 #                                                useSSL=false
     username: root
+    username: ${JDBC_DATABASE_USERNAME}
     password: root
+    password: ${JDBC_DATABASE_PASSWORD}
   jpa:
-    hibernate.ddl-auto: create-drop
+    hibernate.ddl-auto: update
     database: mysql
     show-sql: true
   data:
