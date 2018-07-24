@@ -14,11 +14,11 @@ spring:
 #    password: ${PASSWORD}
   jpa:
     hibernate.ddl-auto: create
-    database: postgresql
-    show-sql: false
+    database: mysql
+    show-sql: true
   data:
     jpa:
       repositories:
         enabled: true
 server:
-  port: ${PORT:8080}
+  port: 8080
