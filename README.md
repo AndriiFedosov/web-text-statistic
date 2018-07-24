@@ -1,4 +1,4 @@
-## Text statistic application.
+## Text statistic application.(Server part)
 
 ### 1. Implement console application
   -  Read txt file and split it by lines
