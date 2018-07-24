@@ -26,4 +26,4 @@
    ##   Web module:
 	  - Start WebTextStatisticApplication.run() in root src directory to start application.
 
-## UI-part available on [web-statistic-ui](http://)
+## UI-part available on [web-statistic-ui](https://github.com/AndriiFedosov/web-text-statistic-ui)
